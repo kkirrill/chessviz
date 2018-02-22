@@ -17,12 +17,16 @@ void doska(){
   a[8][6]='f';
   a[8][7]='g';
   a[8][8]='h';
+  for(int j=1;j<9;j++)
+    for( int i=0;i<8;i++)
+      a[i][j]=' ';
   for(int j=0;j<9;j++){
     for(int i=0;i<9;i++)
-      printf("%c",a[i][j]);
+      printf("%c ",a[j][i]);
     printf("\n");
   }
-  main(){
+}
+  int main(){
     doska();
   }
     
