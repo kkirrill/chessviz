@@ -14,7 +14,7 @@ build/boardinit.o: src/boardinit.c build
 build/print.o: src/print.c build
 	gcc -Wall -Werror -c src/print.c -o build/print.o
 
-build/print.o: src/move.c build
+build/move.o: src/move.c build
 	gcc -Wall -Werror -c src/move.c -o build/move.o
 
 build:
