@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "boardinit.h"
 #include "print.h"
+#include "move.h"
+
+void PawnMove ();
+void PawnMoveWhite ();
+void PawnMoveBlack (); 
 
 int main()
 {	
@@ -10,8 +15,8 @@ int main()
     print(A);
     char xx, xx1;
     int yy, yy1;
-    int x=0,x1=0;
-    int y=0,y1=0;
+    int x,x1;
+    int y,y1;
     printf("\n\n");
     while (1)
     {
@@ -21,6 +26,7 @@ int main()
 		flag = 0;
 		printf("Print positions (ex: a2 a3)\n");
 		scanf("%c %d %c %d", &xx, &yy, &xx1, &yy1);
+                board1 (xx, yy, xx1, yy1);
 		if (xx == 'a') {x = 1; flag++;}
 		if (xx == 'b') {x = 2; flag++;}
 		if (xx == 'c') {x = 3; flag++;}
@@ -57,7 +63,8 @@ int main()
 		if (yy1 == 7) {y1 = 2; flag++;}
 		if (yy1 == 8) {y1 = 1; flag++;}
 	} while (flag != 4);
-	printf("\n\n");	
+	printf("\n\n");
+        PawnMove(y, x, y1, x1, A);	
 	print(A);
 	printf("\n\nExit? (print 'y')\n");
 	scanf(" %c", &con);
